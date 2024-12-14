@@ -33,7 +33,14 @@ def game_gratis_drink():
                 count += 1
                 guess = int(input(f'Wylosowana liczba jest wyższa, spróbuj ponownie.\nPróba {count}: '))
 
-    start_game()
+    start_game()  
+    
+ 
+def wiek_60 (wiek):
+    if wiek >= 60:
+        print("Energetyki nie są rekomendowane dla osób 60+.")
+    else:
+        pass
 
 
 ########## APP ##########
@@ -45,7 +52,9 @@ if wiek.isdigit() == False:
 wiek=int(wiek)
 if wiek>=18 and wiek<120:
     print("Witamy w apce. Mozesz kupować u nas energetyki")
-    game_gratis_drink()
+    wiek_60 (wiek)
+    game_gratis_drink()    
+    
 # naprawa błędów i braków walidacji
 if wiek <18:
     print ("Przepraszamy, nie sprzedajemy energetyków niepełnoletnim")
@@ -53,4 +62,3 @@ elif wiek>120:
     print("Podany wiek przekracza 120 lat, na pewno masz tyle?")
 else:
     pass
-
