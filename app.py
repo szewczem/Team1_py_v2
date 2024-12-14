@@ -20,4 +20,4 @@ elif wiek<18:
     print("Nie masz jeszcze 18 lat, nie kupisz u nas energetykow")
 else:
     print("Masz ponad 120 lat, juz nie zyjesz")
-
+    
