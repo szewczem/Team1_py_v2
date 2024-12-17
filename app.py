@@ -42,6 +42,12 @@ def wiek_60 (wiek):
     else:
         pass
 
+def wiek_50(wiek):
+    if wiek >= 50:
+        print("Osoby 50+ powinny dbać o swoje zdrowie"
+              "i zwracać szczególną uwagę na produkty, które spożywają.")
+
+
 
 ########## APP ##########
 
@@ -52,6 +58,7 @@ if wiek.isdigit() == False:
 wiek=int(wiek)
 if wiek>=18 and wiek<120:
     print("Witamy w apce. Mozesz kupować u nas energetyki")
+    wiek_50(wiek)
     wiek_60 (wiek)
     game_gratis_drink()    
     
