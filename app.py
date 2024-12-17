@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BlackScorpion Energy Drink GRATIS after guessing the number (shop event)
 from random import randrange
 
@@ -50,12 +51,18 @@ def wiek_50(wiek):
 
 
 ########## APP ##########
+=======
+def check_50(wiek):
+    if wiek > 50:
+        print("Masz ponad 50 lat, uważaj na swoje zdrowie.")
+>>>>>>> 941a4785abde04564ab1ff3ca179af90dadc7c99
 
 wiek = input("Podaj wiek uzytkownika: ")
 # sprawdzenie czy wiek jest liczba calkowitą
 if wiek.isdigit() == False:
     exit("Wiek musi byc liczba calkowita. Zamykam aplikację")
 wiek=int(wiek)
+<<<<<<< HEAD
 if wiek>=18 and wiek<120:
     print("Witamy w apce. Mozesz kupować u nas energetyki")
     wiek_50(wiek)
@@ -69,3 +76,8 @@ elif wiek>120:
     print("Podany wiek przekracza 120 lat, na pewno masz tyle?")
 else:
     pass
+=======
+if wiek>=18:
+    print("Witamy w apce. Mozesz kupować u nas energetyki")
+    check_50(wiek)
+>>>>>>> 941a4785abde04564ab1ff3ca179af90dadc7c99
