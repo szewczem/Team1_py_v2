@@ -16,6 +16,4 @@ def wybierz_plec():
         plec = "Nieznana"
 
     print(f"Wybrałeś płeć: {plec}")
-# Wywołanie funkcji
-wybierz_plec()
 
