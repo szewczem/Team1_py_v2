@@ -84,12 +84,15 @@ if wiek>=18 and wiek<120:
 
     
 # naprawa błędów i braków walidacji
-if wiek <18:
-    print ("Przepraszamy, nie sprzedajemy energetyków niepełnoletnim")
-elif wiek>120:
-    print("Podany wiek przekracza 120 lat, na pewno masz tyle?")
-else:
-    pass
+def check_age(wiek):
+    if wiek < 18:
+        print ("Przepraszamy, nie sprzedajemy energetyków niepełnoletnim")
+    elif 18 <= wiek <= 120:
+        print ("Witamy w apce. Mozesz kupować u nas energetyki")
+    else:
+        print ("Podany wiek przekracza 120 lat, na pewno masz tyle? Spróbuj jeszcze raz!")
+
+result = check_age(wiek)
 
 if wiek>=18:
     print("Witamy w apce. Mozesz kupować u nas energetyki")
