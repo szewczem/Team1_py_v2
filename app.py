@@ -52,9 +52,14 @@ def wiek_50(wiek):
     if wiek >= 50:
         print("Osoby 50+ powinny dbać o swoje zdrowie i zwracać szczególną uwagę na produkty, które spożywają.")
 
+def sok_owocowy(wiek):
+    if wiek>=18 and wiek<120:
+        print("Energetyki nie sa zdrowe, moze wolisz sok owocowy?")
+
 def wiek_1825(wiek):
     if wiek>=18 and wiek<25:
         print("Czy na pewno masz 18 lat? Czy mozesz pokazac dowod osobisty?")
+
 
 
 ########## APP ##########
@@ -67,7 +72,11 @@ wiek=int(wiek)
 
 if wiek>=18 and wiek<120:
     print("Witamy w apce. Mozesz kupować u nas energetyki")
+
+    sok_owocowy(wiek)
+
     wiek_1825(wiek)
+
     wiek_50(wiek)
     wiek_60 (wiek)
     game_gratis_drink()
