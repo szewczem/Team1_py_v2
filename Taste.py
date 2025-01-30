@@ -20,5 +20,3 @@ def wybierz_smak():
 
     return f"Wybrałeś smak: {smak}. Przejdź dalej do wybrania ilości do zamówienia."
 
-# Wywołanie funkcji
-print(wybierz_smak())
