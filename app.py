@@ -42,14 +42,10 @@ def promocja_zero():
     else:
         print("Zastanów się nad wypróbowaniem nowych smaków zero, przygotowaliśmy atrakcyjne promocje ;)")
  
-def wiek_60 (wiek):
+def ostrzezenie(wiek):
     if wiek >= 60:
         print("Energetyki nie są rekomendowane dla osób 60+.")
-    else:
-        pass
-
-def wiek_50(wiek):
-    if wiek >= 50:
+    elif wiek >= 50:
         print("Osoby 50+ powinny dbać o swoje zdrowie i zwracać szczególną uwagę na produkty, które spożywają.")
 
 def sok_owocowy(wiek):
@@ -63,35 +59,18 @@ def wiek_1825(wiek):
 
 
 ########## APP ##########
+if __name__ == "__main__":
+    wiek = input("Podaj wiek uzytkownika: ")
+    # sprawdzenie czy wiek jest liczba calkowitą
+    if wiek.isdigit() == False:
+        exit("Wiek musi byc liczba calkowita. Zamykam aplikację")
+    wiek=int(wiek)
 
-wiek = input("Podaj wiek uzytkownika: ")
-# sprawdzenie czy wiek jest liczba calkowitą
-if wiek.isdigit() == False:
-    exit("Wiek musi byc liczba calkowita. Zamykam aplikację")
-wiek=int(wiek)
-
-if wiek>=18 and wiek<120:
-    print("Witamy w apce. Mozesz kupować u nas energetyki")
-
-    sok_owocowy(wiek)
-
-    wiek_1825(wiek)
-
-    wiek_50(wiek)
-    wiek_60 (wiek)
-    game_gratis_drink()
-    promocja_zero()
-
-    
-# naprawa błędów i braków walidacji
-if wiek <18:
-    print ("Przepraszamy, nie sprzedajemy energetyków niepełnoletnim")
-elif wiek>120:
-    print("Podany wiek przekracza 120 lat, na pewno masz tyle?")
-else:
-    pass
-
-if wiek>=18:
-    print("Witamy w apce. Mozesz kupować u nas energetyki")
-    wiek_50(wiek)
+    if wiek>=18 and wiek<120:
+        print("Witamy w apce. Mozesz kupować u nas energetyki")
+        sok_owocowy(wiek)
+        wiek_1825(wiek)
+        ostrzezenie(wiek)
+        game_gratis_drink()
+        promocja_zero()
 

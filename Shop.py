@@ -1,7 +1,11 @@
+from products import product_list
+from app import ostrzezenie
+
 class Shop:
     def __init__(self):
         self.wiek = self.pobierz_wiek()  # Pobranie wieku z walidacją
         self.sprawdz_wiek()  # Automatyczne sprawdzenie wieku po wprowadzeniu danych
+        self.wyswietl_produkty()
 
     def pobierz_wiek(self):
         while True:
@@ -36,12 +40,17 @@ class Shop:
             print("Wiek musi być liczbą całkowitą. Spróbuj ponownie.")
 
     def sprawdz_wiek(self):
-        if self.wiek >= 50:
-            print("Osoby 50+ powinny dbać o swoje zdrowie i zwracać szczególną uwagę na produkty, które spożywają.")
 
-        if self.wiek >= 18:
-            print("Witamy w naszym sklepie. Możesz kupować u nas energetyki.")
-        else:
+        if self.wiek < 18:
             print("Przykro nam, jesteś jeszcze na to za młody. Odwiedź nas później.")
+        else:
+            print("Witamy w naszym sklepie. Możesz kupować u nas energetyki.")
 
-shop = Shop()
+        ostrzezenie(self.wiek)
+
+
+    def wyswietl_produkty(self):
+        if self.wiek >= 18:
+            print("Dostępne są następujące produkty: ")
+            print(product_list)
+
