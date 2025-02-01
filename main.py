@@ -1,9 +1,11 @@
+from Shop import Shop
+
 def main():
-    #1st function
+    Shop()
     #2nd function
     #3rd ...
     #...
-    pass
+
 
 if __name__ == "__main__":
     main()
