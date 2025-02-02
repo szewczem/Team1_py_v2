@@ -6,8 +6,7 @@ class Shop:
         self.wiek = input("Zanim rozpoczniesz zakupy w naszym sklepie, proszę podaj wiek kupującego: ")
         self.enter = False
         self.pobierz_wiek(self.wiek, self.enter)  # Pobranie wieku z walidacją
-        
-        
+                
 
     def pobierz_wiek(self, wiek, enter):
         while True:
