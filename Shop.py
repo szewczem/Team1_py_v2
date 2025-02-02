@@ -46,20 +46,22 @@ class Shop:
                     self.pobierz_wiek(wiek, enter)
             else:
                 print("\nWitamy w naszym sklepie. Możesz kupować u nas energetyki.")       
-                enter = True         
-                ostrzezenie(wiek) 
-                self.wyswietl_produkty() 
+                self.welcome(wiek, enter)
         else:
             print("\nWitamy w naszym sklepie. Możesz kupować u nas energetyki.")                
-            self.enter = True
-            ostrzezenie(wiek)         
-            self.wyswietl_produkty()
+            self.welcome(wiek, enter)
 
 
     def wyswietl_produkty(slef):
         print("\nDostępne są następujące produkty: ")
         for i in range(product_list.number_of_product()):
             print(f"{i+1}:  {product_list.product_number(i)}")
+
+    
+    def welcome(self, wiek, enter):
+        self.enter = True         
+        ostrzezenie(wiek) 
+        self.wyswietl_produkty() 
 
 
 
