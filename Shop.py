@@ -3,54 +3,63 @@ from app import ostrzezenie
 
 class Shop:
     def __init__(self):
-        self.wiek = self.pobierz_wiek()  # Pobranie wieku z walidacją
-        self.sprawdz_wiek()  # Automatyczne sprawdzenie wieku po wprowadzeniu danych
-        self.wyswietl_produkty()
+        self.wiek = input("Zanim rozpoczniesz zakupy w naszym sklepie, proszę podaj wiek kupującego: ")
+        self.enter = False
+        self.pobierz_wiek(self.wiek, self.enter)  # Pobranie wieku z walidacją
+        
+        
 
-    def pobierz_wiek(self):
+    def pobierz_wiek(self, wiek, enter):
         while True:
-            wiek = input("Zanim rozpoczniesz zakupy w naszym sklepie, proszę podaj wiek kupującego: ")
-
             # Sprawdzamy, czy liczba jest całkowita
             if wiek.isdigit():
-                wiek = int(wiek)
-
-                # Jeśli wiek przekracza 100 lat, prosimy o ponowne podanie
-                if wiek > 100:
-                    print("Podany wiek przekracza 100 lat. Na pewno masz tyle?")
-                    decyzja = input("Jeśli się pomyliłeś, wpisz swój wiek jeszcze raz. Jeśli nie, wpisz 'tak': ")
-                    if decyzja.lower() != "tak":
-                        try:
-                            wiek = int(decyzja)  # Próbujemy zamienić nową wartość na liczbę całkowitą
-                            return wiek  # Jeśli się udało, przyjmujemy nowy wiek
-                        except ValueError:
-                            print("Niepoprawna wartość. Wiek musi być liczbą całkowitą. Spróbuj ponownie.")
-                            continue  # Powtarzamy pętlę
-
-                return wiek  # Jeśli wiek jest OK, zwracamy go
-
+                wiek = int(wiek)    
+                if wiek > 0:            
+                    self.sprawdz_wiek(wiek, enter)
+                    break
             # Sprawdzamy, czy liczba jest niecałkowita (np. 18.5)
             try:
                 if float(wiek) and not float(wiek).is_integer():
-                    print("Podano liczbę niecałkowitą! Proszę podać wiek jako liczbę całkowitą.")
+                    wiek = input("Podano liczbę niecałkowitą! Proszę podać wiek jako liczbę całkowitą: ")
                     continue
             except ValueError:
-                pass  # Jeśli nie można zamienić na float, to nie jest liczba
+                # Jeśli nie można zamienić na float, to nie jest liczba
+                wiek = input("Wiek musi być liczbą całkowitą. Proszę podać swój wiek: ")
+                self.pobierz_wiek(wiek, enter)
+            else:
+                wiek = input("Wprowadzoną niepoprawną wartość. Proszę podać swój wiek: ")
+                continue
 
-            print("Wiek musi być liczbą całkowitą. Spróbuj ponownie.")
 
-    def sprawdz_wiek(self):
-
-        if self.wiek < 18:
-            print("Przykro nam, jesteś jeszcze na to za młody. Odwiedź nas później.")
+    def sprawdz_wiek(self, wiek, enter):
+        if wiek < 18:
+            print("Przykro nam, jesteś jeszcze na to za młody. Odwiedź nas później.")        
+        # Jeśli wiek przekracza 100 lat, prosimy o ponowne podanie
+        elif wiek > 100:
+            decyzja = input("\nPodany wiek przekracza 100 lat. Na pewno masz tyle? [y/n]: ")
+            if decyzja != "y":
+                try:
+                    wiek = int(input("Proszę podać swój wiek: "))  # Próbujemy zamienić nową wartość na liczbę całkowitą                      
+                    self.sprawdz_wiek(wiek, enter)
+                except ValueError:
+                    wiek = input("Niepoprawna wartość. Wiek musi być liczbą całkowitą. Proszę podać swój wiek: ")
+                    self.pobierz_wiek(wiek, enter)
+            else:
+                print("\nWitamy w naszym sklepie. Możesz kupować u nas energetyki.")       
+                enter = True         
+                ostrzezenie(wiek) 
+                self.wyswietl_produkty() 
         else:
-            print("Witamy w naszym sklepie. Możesz kupować u nas energetyki.")
+            print("\nWitamy w naszym sklepie. Możesz kupować u nas energetyki.")                
+            self.enter = True
+            ostrzezenie(wiek)         
+            self.wyswietl_produkty()
 
-        ostrzezenie(self.wiek)
+
+    def wyswietl_produkty(slef):
+        print("\nDostępne są następujące produkty: ")
+        for i in range(product_list.number_of_product()):
+            print(f"{i+1}:  {product_list.product_number(i)}")
 
 
-    def wyswietl_produkty(self):
-        if self.wiek >= 18:
-            print("Dostępne są następujące produkty: ")
-            print(product_list)
 
