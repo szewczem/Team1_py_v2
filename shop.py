@@ -1,5 +1,5 @@
+from functions import ostrzezenie
 from products import product_list
-from app import ostrzezenie
 
 class Shop:
     def __init__(self):

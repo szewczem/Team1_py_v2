@@ -34,16 +34,8 @@ def game_gratis_drink():
             elif guess < number:
                 count += 1
                 guess = int(input(f'Wylosowana liczba jest wyższa, spróbuj ponownie.\nPróba {count}: '))
-    start_game()  
+    start_game()
 
-
-def promocja_zero():
-    promo_question = input("Czy preferujesz energetyki bez cukru? [y/n]")
-    if promo_question == "y":
-        print("Tylko dziś promocja 2+1 na napoje eneregetyczne o dowolnym smaku!")
-    else:
-        print("Zastanów się nad wypróbowaniem nowych smaków zero, przygotowaliśmy atrakcyjne promocje ;)")
- 
 
 def ostrzezenie(wiek):
     if wiek >= 60:
@@ -52,13 +44,6 @@ def ostrzezenie(wiek):
         print("\nOsoby 50+ powinny dbać o swoje zdrowie i zwracać szczególną uwagę na produkty, które spożywają.")
 
 
-def sok_owocowy(wiek):
-    if wiek>=18 and wiek<120:
-        print("Energetyki nie sa zdrowe, moze wolisz sok owocowy?")
 
-
-def wiek_1825(wiek):
-    if wiek>=18 and wiek<25:
-        print("Czy na pewno masz 18 lat? Czy mozesz pokazac dowod osobisty?")
 
 
