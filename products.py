@@ -53,6 +53,7 @@ class ProductList:
 
 
 # przykładowy energetyk do testów:
+gratis = Product("BlackScorpion","Cola", True, 0)
 energetyk_cytrynowy = Product("Energetyk","Cytrynowy",True,5)
 energetyk_truskawkowy = Product("Energetyk","Truskawkowy",True,5)
 energetyk_arbuzowy = Product("Energetyk","Arbuzowy",False,5)
@@ -60,5 +61,5 @@ energetyk_pomaranczowy = Product("Energetyk","Pomarańczowy",False,5)
 
 
 product_list = ProductList()
-product_list.add_products([energetyk_cytrynowy, energetyk_truskawkowy, energetyk_arbuzowy, energetyk_pomaranczowy])
+product_list.add_products([gratis, energetyk_cytrynowy, energetyk_truskawkowy, energetyk_arbuzowy, energetyk_pomaranczowy])
 

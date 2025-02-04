@@ -53,8 +53,8 @@ class Shop:
 
     def wyswietl_produkty(slef):
         print("\nDostępne są następujące produkty: ")
-        for i in range(product_list.number_of_product()):
-            print(f"{i+1}:  {product_list.product_number(i)}")
+        for i in range(1,product_list.number_of_product()):
+            print(f"{i}:  {product_list.product_number(i)}")
 
     
     def welcome(self, wiek, enter):
