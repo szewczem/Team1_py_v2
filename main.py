@@ -1,6 +1,21 @@
 from shop import Shop
 from cart import Cart
 
+# funkcja walidacyjna na podanie numeru produktu innego niż lista ale nie wiem jak zastosować...
+def validate_product_nr():
+    while True:
+        try:
+            item_num = int(input('\nPodaj numer produktu który chcesz dodać do koszyka: '))
+
+            if item_num < 1 or item_num >= 5:
+                print("Podano nieprawidłową wartość. Wpisz jedną z liczb dostępnych do wyboru.")
+                continue
+
+            else:
+                break
+
+        except ValueError:
+            print("Podano nieprawidłową wartość. Wpisz jedną z liczb dostępnych do wyboru.")
 
 def main():
     shop = Shop()
@@ -15,7 +30,7 @@ def main():
             if shopping == 1:
                 shop.wyswietl_produkty()
                 item_num = int(input('\nPodaj numer produktu który chcesz dodać do koszyka: '))
-                cart.add_to_cart(item_num-1)            
+                cart.add_to_cart(item_num-1)
                 cart.show_cart()
                 continue
             elif shopping == 2:
@@ -30,6 +45,10 @@ def main():
                 print(f"\nLiczba przedmiotów w koszyku: {cart.number_of_product()}, całkowita cena koszyka {cart.total_price()} PLN.")
                 print("Dziękujemy za zakupy. Zapraszamy ponownie!")
                 break
+
+            else:
+                print("Podano nieprawidłową wartość. Wpisz jedną z liczb dostępnych do wyboru.")
+
     else:
         pass
 
