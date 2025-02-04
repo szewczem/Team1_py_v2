@@ -25,6 +25,7 @@ class Shop:
                 # Jeśli nie można zamienić na float, to nie jest liczba
                 wiek = input("Podawany wiek musi być liczbą całkowitą. Proszę podać swój wiek ponownie: ")
                 self.pobierz_wiek(wiek, enter)
+                break
             else:
                 wiek = input("Wprowadzono niepoprawną wartość. Proszę podać swój wiek: ")
                 continue
