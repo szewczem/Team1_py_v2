@@ -1,5 +1,5 @@
 from products import product_list, Product
-from random import randrange # BlackScorpion Energy Drink GRATIS after guessing the number (shop event)
+from random import randrange    # BlackScorpion Energy Drink GRATIS after guessing the number (shop event)
 
 
 class Cart:
@@ -8,29 +8,24 @@ class Cart:
 
     def __str__(self):
         return "\n".join(str(product) for product in self.cart_list)
-
-    # dodanie jednego produktu do listy
-    def add_to_cart(self, i):
+    
+    def add_to_cart(self, i):    # dodanie jednego produktu do listy
         self.cart_list.append(product_list.product_number(i))
-
-    # usuniecie produktu z listy
-    def remove_from_cart(self, i):
+        self.show_cart()
+    
+    def remove_from_cart(self, i):    # usuniecie produktu z listy
         self.cart_list.remove(self.product_number(i))
-
     
     def number_of_product(self):
-        return len(self.cart_list)
-    
+        return len(self.cart_list)    
 
     def product_number(self, i):
-        return self.cart_list[i]
-    
+        return self.cart_list[i]    
 
     def show_cart(self):
         print('\nTwój koszyk:')
         for i in range(self.number_of_product()):
             print(f"{i+1}:  {self.product_number(i)}")
-
 
     def total_price(self):
         total = 0
@@ -38,10 +33,8 @@ class Cart:
             total += self.product_number(i).price
         return total
 
-
     def game_gratis_drink(self):
         print('\nJako pełnoletni klient masz możliwość wygrania nagrody. Wygraj grę i odbierz gratis do zakupów!')
-
 
         def start_game(self):
             answer = input(
@@ -50,7 +43,6 @@ class Cart:
                 numbers_game(self)
             else:
                 print('Wyzwanie odrzucone.')
-
 
         def numbers_game(self):
             number = randrange(0, 101)
