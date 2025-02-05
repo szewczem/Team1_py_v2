@@ -1,12 +1,12 @@
 from functions import ostrzezenie
 from products import product_list
 
+
 class Shop:
     def __init__(self):
         self.wiek = input("Zanim rozpoczniesz zakupy w naszym sklepie, proszę podaj wiek kupującego: ")
         self.enter = False
-        self.pobierz_wiek(self.wiek, self.enter)  # Pobranie wieku z walidacją
-                
+        self.pobierz_wiek(self.wiek, self.enter)  # Pobranie wieku z walidacją                
 
     def pobierz_wiek(self, wiek, enter):
         while True:
@@ -29,7 +29,6 @@ class Shop:
                 wiek = input("Wprowadzono niepoprawną wartość. Proszę podać swój wiek: ")
                 continue
 
-
     def sprawdz_wiek(self, wiek, enter):
         if wiek < 18:
             print("Przykro nam, jesteś jeszcze na to za młody. Odwiedź nas później.")        
@@ -50,12 +49,10 @@ class Shop:
             print("\nWitamy w naszym sklepie. Możesz kupować u nas energetyki.")                
             self.welcome(wiek, enter)
 
-
     def wyswietl_produkty(self):
         print("\nDostępne są następujące produkty: ")
         for i in range(1,product_list.number_of_product()):
             print(f"{i}:  {product_list.product_number(i)}")
-
     
     def welcome(self, wiek, enter):
         self.enter = True         

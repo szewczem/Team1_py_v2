@@ -7,16 +7,14 @@ def main():
     if shop.enter == True:
         item_num = int(input('\nPodaj numer produktu który chcesz dodać do koszyka: '))
         cart = Cart()
-        cart.add_to_cart(item_num)    
-        cart.show_cart()
+        cart.add_to_cart(item_num)
 
         while True:
             shopping = int(input('\nJeśli chcesz kontynuwać zakupy wpisz [1], jeśli chcesz edytować koszyk wpisz [2], jeśli chcesz zakończyć zakupy wpisz [3]: '))
             if shopping == 1:
                 shop.wyswietl_produkty()
                 item_num = int(input('\nPodaj numer produktu który chcesz dodać do koszyka: '))
-                cart.add_to_cart(item_num)   
-                cart.show_cart()
+                cart.add_to_cart(item_num)
                 continue
             elif shopping == 2:
                 cart.show_cart()
@@ -31,10 +29,8 @@ def main():
                 print(f"\nLiczba przedmiotów w koszyku: {cart.number_of_product()}, całkowita cena koszyka {cart.total_price()} PLN.")
                 print("Dziękujemy za zakupy. Zapraszamy ponownie!\n")
                 break
-
             else:
                 print("Podano nieprawidłową wartość. Wpisz jedną z liczb dostępnych do wyboru.")
-
     else:
         pass
 
