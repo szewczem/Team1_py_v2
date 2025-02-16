@@ -33,7 +33,7 @@ class Product:
 
     def __str__(self):    # print klasy pokazuje nazwe/smak/zawartość cukru/cene
         sugar_status = "bez cukru" if self.zero else "z cukrem"
-        return f"{self.name:10} {self.flavour:13} {sugar_status:10} {self.price} PLN/szt."
+        return f"{self.name:15} {self.flavour:13} {sugar_status:10} {self.price} PLN/szt."
 
     def __eq__(self, other):
         return (self.id == other.id and self.name == other.name and self.flavour == other.flavour and
@@ -83,6 +83,16 @@ class ProductList:
         except FileNotFoundError:
             self.product_list = []
 
+    def load_gratis_drink(self):
+        with open(self.filename, 'r', encoding='utf-8') as file:
+            json_data = json.load(file)
+
+            if "Gratis" in json_data and len(json_data["Gratis"]) > 0:
+                return Product.from_dict(json_data["Gratis"][0])
+            else:
+                print("No Gratis found")
+                return None
+
     def number_of_product(self):
         return len(self.product_list)
     
@@ -96,5 +106,7 @@ class ProductList:
 
 product_list = ProductList()
 product_list.load_products()
+gratis_list = ProductList()
+gratis_product = gratis_list.load_gratis_drink()
 
 
