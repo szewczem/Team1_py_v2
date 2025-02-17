@@ -10,7 +10,7 @@ class Cart:
         return "\n".join(str(product) for product in self.cart_list)
     
     def add_to_cart(self, i):    # dodanie jednego produktu do listy
-        self.cart_list.append(product_list.product_number(i))
+        self.cart_list.append(product_list.product_number(i-1))
         self.show_cart()
 
     def add_gratis(self, gratis):
