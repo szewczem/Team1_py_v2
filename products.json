@@ -1,0 +1,18 @@
+{
+  "Products":
+          [
+            {"id": 1, "name": "Monster", "flavour": "Classic", "zero": false, "price": 7},
+            {"id": 2, "name": "Monster", "flavour": "Tropikalny", "zero": false, "price": 7},
+            {"id": 3, "name": "Monster", "flavour": "Classic Zero", "zero": true, "price": 5},
+            {"id": 4, "name": "Monster", "flavour": "Jabłkowy", "zero": true, "price": 5},
+            {"id": 5, "name": "Monster", "flavour": "Brzoskwiniowy", "zero": true, "price": 5},
+            {"id": 6, "name": "Monster", "flavour": "Mango", "zero": true, "price": 5},
+            {"id": 7, "name": "Red Bull", "flavour": "Classic", "zero": false, "price": 6},
+            {"id": 8, "name": "Red bull", "flavour": "SugarFree", "zero": true, "price": 5}
+
+          ],
+  "Gratis":
+          [
+            {"id": 9, "name": "BlackScorpion", "flavour": "Cola", "zero": true, "price": 0}
+          ]
+}

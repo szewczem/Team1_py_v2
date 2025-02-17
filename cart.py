@@ -1,4 +1,4 @@
-from products import product_list, Product
+from products import product_list, Product, gratis_product
 from random import randrange    # BlackScorpion Energy Drink GRATIS after guessing the number (shop event)
 
 
@@ -10,7 +10,11 @@ class Cart:
         return "\n".join(str(product) for product in self.cart_list)
     
     def add_to_cart(self, i):    # dodanie jednego produktu do listy
-        self.cart_list.append(product_list.product_number(i))
+        self.cart_list.append(product_list.product_number(i-1))
+        self.show_cart()
+
+    def add_gratis(self, gratis):
+        self.cart_list.append(gratis)
         self.show_cart()
     
     def remove_from_cart(self, i):    # usuniecie produktu z listy
@@ -53,7 +57,7 @@ class Cart:
             while count <= 5:
                 if guess == number:
                     print('Zgadłeś! Wygrywasz BlackScorpion Energy Drink!')
-                    self.add_to_cart(0)
+                    self.add_gratis(gratis_product)
                     break
                 elif count == 5 and guess != number:
                     print(f"Nie masz więcej prób do wykorzystania. Wylosowaną liczbą była liczba: {number}.")
